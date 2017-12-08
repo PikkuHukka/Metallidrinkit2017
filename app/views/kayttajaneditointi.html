@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block content %}
+{% if kayttaja %}
+
+
+<h1>Muokkaa tiliä {{kayttaja.nimi}}</h1>
+
+{%if message %}
+<div class="alert alert-success">
+    {{message}}
+</div>
+{% endif %}
+
+{% if errors %}
+<div class="alert alert-danger">
+    <ul>
+        {% for error in errors %}
+        <li>{{error}}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+<form method="post" action="{{base_path}}/kayttajahallinta/{{kayttaja.id}}/edit">
+
+    <label>Kayttäjän ID :  {{kayttaja.id}}</label>
+
+    <div class="form-group">
+        <label>Kayttäjän Nimi</label>
+        <input type="text" name="nimi" value="{{kayttaja.nimi}}" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label>Kayttajatila</label>
+        <select name="taso" class="form-control" value ="{{kayttaja.taso}}">
+            <option value="suljettu">Suljettu</option>
+            <option value="perus">Perus</option>
+            <option value="admin">Admin</option>
+
+        </select>    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Muokkaa"/>
+
+    </div>
+
+</form>
+
+<form method="post" action="{{base_path}}/kayttajahallinta/{{kayttaja.id}}/salasana">
+
+    <div class="form-group">
+        <label>Uusi salasana</label>
+        <input type="text" name="salasana" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Salasana uudelleen</label>
+        <input type="text" name="salasana2" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Vaihda salasana"/>
+
+    </div>
+    
+</form>
+
+
+<form method="post" action="{{base_path}}/kayttajahallinta/{{kayttaja.id}}/poista" class="destroy-form" data-confirm="Oletko varma, että haluat poistaa kayttajan {{kayttaja.nimi}}?">
+    <button type="submit" class="btn btn-danger">Poista</button>
+</form>
+{% endif%}
+{% endblock %}

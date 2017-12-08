@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Metallidrinkit</h1>
+
+
+
+
+<form method="post" action="{{base_path}}/drinkit">
+    <div class="form-group">
+        <label>Drinkkihaku</label>
+        <input type="text" name="hakusanat" class="form-control" placeholder="Hakusana">
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Hae"/>
+    </div>
+</form>
+
+
+
+{% if user_logged_in %}
+
+<p>
+    <a href="{{base_path}}/drinkit/uusi" class="btn btn-success">Lisää drinkki</a>
+</p>
+{% endif %}
+
+
+
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Nimi</th>
+            <th>Kuvaus</th>
+            <th>Vahvuus</th>
+            <th>Lämpö</th>
+            <th>Ainesosat</th>
+            <th>Lisaaja</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for drink in drinkit %}
+        <tr>
+            <td><a href="{{base_path}}/drinkit/{{drink.id}}">{{drink.nimi}}</td>
+            <td>{{drink.kuvaus}}</td>
+            <td> {{drink.vahvuus}}</td>
+            <td>{{drink.lampo}}</td>
+
+            <td>
+                {% for ainesosa in drink.ainesosat %}
+
+                {{ainesosa.nimi}}, 
+
+                {% endfor %}
+            </td>
+            <td>{{drink.lisaaja}}</td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

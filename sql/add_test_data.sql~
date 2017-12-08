@@ -1,0 +1,7 @@
+-- Lisää INSERT INTO lauseet tähän tiedostoon
+
+INSERT INTO Drinkki (nimi,kuvaus, lampo ,vahvuus, ainesosat, lisaaja) VALUES ('Suolainen Kapteeni','On kuulemma hyvaa', 'Kylma', 40, 'Tequilaa,vodkaa, rommia, ananasjuomaa ja suolaa','Pyry');
+INSERT INTO Drinkki (nimi,kuvaus, lampo ,vahvuus, ainesosat, lisaaja) VALUES ('Rytmihäiriön unelma','Maistuu gambiinalta', 'Kylma', 21, 'Gambiinaa ja gambiinaa','Venni');
+INSERT INTO Kayttaja (nimi, salasana) VALUES ('hukkis', 'jeejee');
+
+

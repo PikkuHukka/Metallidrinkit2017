@@ -29,7 +29,7 @@
       }
 
       public static function test_connection(){
-        require 'lib/ConnectionTest/connection_test.php';
+        require 'vendor/ConnectionTest/connection_test.php';
 
         exit();
       }

@@ -1,0 +1,33 @@
+# Tietokantasovelluksen esittelysivu
+
+Yleisiä linkkejä:
+
+
+* [Linkki etusivulle](http://oolli.users.cs.helsinki.fi/metallidrinkit/)
+
+* [Linkki dokumentaatiooni](https://github.com/PikkuHukka/Metallidrinkit/tree/master/doc/dokumentaatio.pdf)
+
+## Metallidrinkit
+ Drinkkiarkisto raskaan musiikin teemalla. [Drinkkiarkisto](http://advancedkittenry.github.io/suunnittelu_ja_tyoymparisto/aiheet/Drinkkiarkisto.html) 
+
+*[Uuden juoman lisäys](http://oolli.users.cs.helsinki.fi/metallidrinkit/drinkit/uusi) 
+
+*[Juoman 1 esittely](http://oolli.users.cs.helsinki.fi/metallidrinkit/drinkit/1) 
+
+*[Drinkit](http://oolli.users.cs.helsinki.fi/metallidrinkit/drinkit) 
+
+*[Tietokantayhteys](http://oolli.users.cs.helsinki.fi/metallidrinkit/tietokantayhteys)
+
+Tietokannassa olevat taulukot ovat lähinnä testiä ja osa taulukoista, sekä sarakkesita puuttuu vielä.
+
+Valikoiden piilottamisen lisäksi kirjautumaton käyttäjä ei pääse editoimaan/poistamaan/lisäämään vaikka käyttäisi suoraa URL polkua. Samoin kirjautunut käyttäjä ei pääse kirjautumaan uudestaan tai luomaan uutta käyttäjää ennenkuin on kirjautunut ulos.
+
+## Käyttöohjeet
+Vaikka kirjautuminen ei vielä tee oikeastaan mitään, löytyy se ylävalikon "Login" kohdasta.
+Kirjautumisessa voi käyttää tunnuksia:
+
+"testaaja" salasana: "jeejee"  
+tai  
+"toka" salasana: "juujuu"  
+
+Drinkkejä, voi lisätä joko ylävalikon "Ehdota drinkkiä" valikosta tai menemällä "Drinkit"-osioon ja sieltä "Lisää drinkki" napista. Drinkkien tiedot, muokkaus ja poisto-osiot löytyvät "Drinkit"-osiosta napsauttamalla drinkin nimestä.

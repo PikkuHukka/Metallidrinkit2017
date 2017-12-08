@@ -1,0 +1,10 @@
+Metallidrinkit.
+
+Tämän kouluprojektin tarkoitus on tehdä drinkkitietokanta, josta käyttäjät voivat etsiä erilaisia metallimusiikkiin liittyviä alkoholi/alkoholittomia juomia.
+Jos käyttäjä kirjautuu sisään, voi hän katselemisen lisäksi ehdottaa uusia juomia tai kommentoida / arvostella muita juomia.
+Moderaattorit voivat hyväksyä asiallisia juomaehdotuksia ja sulkea käyttäjätilejä, johtuen esimerkiksi epäasiallisesta kommentoinnista.
+Järjestelmän tavoite on saada käyttäjäystävällinen hakukone drinkeille, joita on sitten helppo lisätä uusia drinkkejä tai etsiä niitä esimerkiksi nimen tai ainesosien avulla.
+Tulen käyttämään työssä lähinnä PHP'tä ja PostgreSQL tietokantapalvelinta. Teen työn lähinnä laitoksen koneilla, mutta users palvelimelle pääsee miltä tahansa koneelta.
+En osaa vielä täsäs vaiheessa sanoa, voiko työtä tulla siirtämään jollekkin muulle tietokannalle.
+
+Suunniteltu käyttötapauskaavio. [Käyttötapauskaavio] (https://github.com/PikkuHukka/Metallidrinkit/tree/master/doc/use.png)

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Ainesosat juomiin</h1>
+
+
+
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Nimi</th>
+            <th>Juoman ID</th>
+
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for ainesosa in ainesosat %}
+        <tr>
+
+            <td><a href="{{base_path}}/ainesosat/{{ainesosa.id}}">{{ainesosa.nimi}}</td>
+            <td>{{ainesosa.id}}</td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

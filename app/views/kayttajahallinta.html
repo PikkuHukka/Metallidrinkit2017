@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Kayttajahallinta</h1>
+
+
+{% if errors %}
+<div class="alert alert-danger">
+    <ul>
+        {% for error in error %}
+        <li>{{error}}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+<form method="post" action="{{base_path}}/kayttajahallinta">
+    <div class="form-group">
+        <label>Kayttajahaku</label>
+        <input type="text" name="hakusanat" class="form-control" placeholder="Nimi">
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Hae"/>
+    </div>
+</form>
+
+
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Nimi</th>
+            <th>Taso</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for kayttaja in kayttajat %}
+        <tr>
+            <td><a href="{{base_path}}/kayttajahallinta/{{kayttaja.id}}/edit">{{kayttaja.nimi}}</td>
+            <td>{{kayttaja.taso}}</td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

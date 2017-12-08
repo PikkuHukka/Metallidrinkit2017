@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Kirjaudu sisään</h1>
+
+  {% if error %}
+<div class="alert alert-danger">
+    {{error}}
+</div>
+
+{% endif %}
+
+  {%if message %}
+<div class="alert alert-success">
+    {{message}}
+</div>
+{% endif %}
+<p>
+    <a href="{{base_path}}/login/uusikayttaja" class="btn btn-success">Uusi Käyttäjä</a>
+</p>
+  
+  <form method="post" action="{{base_path}}/login">
+    <div class="form-group">
+      <label>Käyttäjätunnus</label>
+      <input type="text" class="form-control" name="username" value="{{username}}">
+    </div>
+
+    <div class="form-group">
+      <label>Salasana</label>
+      <input type="password" class="form-control" name="password">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Kirjaudu sisään</button>
+  </form>
+
+
+{% endblock %}

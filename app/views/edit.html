@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block content %}
+{% for drink in drinkit %}
+
+
+<h1>Muokkaa juomaa {{drink.nimi}}</h1>
+
+{%if message %}
+<div class="alert alert-success">
+    {{message}}
+</div>
+{% endif %}
+
+
+{% if errors %}
+<div class="alert alert-danger">
+
+    <ul>
+        {% for error in errors %}
+        <li>{{error}}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+<form method="post" action="{{base_path}}/drinkit/{{drink.id}}/edit">
+    <div class="form-group">
+        <label>Juoman nimi</label>
+        <input type="text" name="nimi" value="{{drink.nimi}}" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label>Kuvaus</label>
+        <input type="text" name="kuvaus" value="{{drink.kuvaus}}" class="form-control">
+    </div>
+
+    <div class="checkbox">
+        {% for ainesosa  in ainesosat %}
+        <label class="checkbox-inline"><input name="ainesosat[]" type="checkbox" value="{{ainesosa.id}}">{{ainesosa.nimi}}</label>
+        {% endfor %}
+    </div>
+
+    <div class="form-group">
+        <label>Vahvuus</label>
+        <input type="number" name="vahvuus" value="{{drink.vahvuus}}" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label>Lämpötila</label>
+        <select name="lampo" class="form-control">
+            <option value="Kylmä">Kylmä</option>
+            <option value="Viileä">Viileä</option>
+            <option value="Lämmin">Lämmin</option>
+            <option value="Kuuma">Kuuma</option>
+        </select>    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Muokkaa"/>
+
+    </div>
+
+</form>
+
+<form method="post" action="{{base_path}}/drinkit/{{drink.id}}/poista" class="destroy-form" data-confirm="Oletko varma, että haluat poistaa drinkin?">
+    <button type="submit" class="btn btn-danger">Poista</button>
+</form>
+{% endfor %}
+{% endblock %}

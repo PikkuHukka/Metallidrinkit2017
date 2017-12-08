@@ -1,64 +1,88 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>
-      {% block title %}
-        Tietokantasovellus
-      {% endblock %}
-    </title>
+        <title>
+            {% block title %}
+            Tietokantasovellus
+            {% endblock %}
+        </title>
 
-    {% block head %}
-      <!-- Bootstrap (tyylitiedosto) -->
-      <link href="{{base_path}}/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        {% block head %}
+        <link href="{{base_path}}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-      <!-- Oma tyylitiedostomme -->
-      <link href="{{base_path}}/assets/css/site.css" rel="stylesheet">
-    {% endblock %}
-  </head>
+        <link href="{{base_path}}/assets/css/site.css" rel="stylesheet">
+        {% endblock %}
 
-  <body>
+    </head>
 
-    <nav class="navbar navbar-default" role="navigation">
-      <div class="container-fluid">
+    <body>
 
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <!-- Sovelluksen nimi -->
-          <a class="navbar-brand" href="{{base_path}}">Tsoha Bootstrap</a>
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- Sovelluksen nimi -->
+                    <a class="navbar-brand" href="{{base_path}}">Metallidrinkit</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navigation">
+                    <ul class="nav navbar-nav">
+                        <!-- Navigaation linkit -->
+
+                        <li><a href="http://oolli.users.cs.helsinki.fi/metallidrinkit/drinkit">Drinkit</a></li>
+
+                        {% if user_logged_in %} <!-- Näkyy vain jos on kirjautunut-->
+                        <li><a href="http://oolli.users.cs.helsinki.fi/metallidrinkit/drinkit/uusi">Lisää drinkki</a></li>
+                        <li><a>Kirjautunut käyttäjä: {{user_logged_in.nimi}}</a></li>
+
+                        <form class="navbar-form navbar-right" method="post" action="{{base_path}}/logout">
+                            <button type="submit" class="btn btn-default">Kirjaudu ulos</button>
+
+                        </form>
+                        {% else %}
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="{{base_path}}/login">Kirjaudu sisään</a></li>
+                        </ul>
+                        {% endif %}
+
+                        {% if user_logged_admin %} <!-- Näkyy vain jos on admin -->
+                        <li><a href="{{base_path}}/kayttajahallinta">Käyttäjien hallinta</a></li>
+
+                        {% endif %}
+                        <li><a href="{{base_path}}/ainesosat">Ainesosat</a></li>
+
+                </div>
+
+
+
+
+                </ul>
+            </div>
         </div>
-
-        <div class="collapse navbar-collapse" id="navigation">
-          <ul class="nav navbar-nav">
-            <!-- Navigaation linkit -->
-            <li><a href="{{base_path}}">Etusivu</a></li>
-          </ul>
-        </div>
-      </div>
     </nav>
 
     <div id="main-container">
-      <!-- Dynaaminen sisältö tulee tähän -->
-      {% block content %}{% endblock %}
+        <!-- Dynaaminen sisältö tulee tähän -->
+        {% block content %}{% endblock %}
     </div>
 
     {% block body %}
-      <!-- jQuery -->
-      <script src="{{base_path}}/assets/js/jquery.min.js"></script>
+    <script src="{{base_path}}/vendor/jquery.min.js"></script>
 
-      <!-- Bootstrap (skriptitiedosto) -->
-      <script src="{{base_path}}/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{{base_path}}/vendor/bootstrap/js/bootstrap.min.js"></script>
 
-      <!-- Oma skriptitiedostomme -->
-      <script src="{{base_path}}/assets/js/site.js"></script>
+    <script src="{{base_path}}/assets/js/site.js"></script>
+
     {% endblock %}
-  </body>
+</body>
 </html>

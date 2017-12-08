@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+{% for drink in drinkit %}
+
+<h1>{{drink.nimi}}</h1>
+<!-- Painikkeet tähän -->
+{%if message %}
+<div class="alert alert-success">
+    {{message}}
+</div>
+{% endif %}
+
+{% if user_logged_in %}
+
+<p>
+    <a href="{{drink.id}}/edit" class="btn btn-default">Muokkaa</a>
+</p>
+{% endif %}
+<!-- Tiedot tulee listana tähän --> 
+
+<ul>
+
+    <li><strong>Vahvuus: </strong>{{drink.vahvuus}}</li>
+    <li><strong>Lämpötila: </strong>{{drink.lampo}}</li>
+    <strong>Ainesosat </strong>
+
+    {% for ainesosa  in ainesosat %}
+
+    {{ainesosa.nimi}}
+    {% endfor %}
+
+    <li><strong>Lisääjä: </strong>{{drink.lisaaja}}</li>
+</ul>
+
+
+<p>
+    {{drink.kuvaus}}
+</p>
+{% endfor %}
+{% endblock %}

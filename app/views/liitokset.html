@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Liitokset sivu</h1>
+
+
+
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Drinkki ID</th>
+            <th>Ainesosa ID</th>
+
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for liitos in liitokset %}
+        <tr>
+
+            <td>{{liitos.drinkki}}</td>
+            <td>{{liitos.ainesosa}}</td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
