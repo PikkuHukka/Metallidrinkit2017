@@ -11,7 +11,7 @@ class Kayttaja extends BaseModel {
         $this->validators = array('validate_kayttaja');
     }
 
-    public function authenticate($name, $password) {
+    public static function authenticate($name, $password) {
         $query = DB::connection()->prepare('SELECT * FROM Kayttaja WHERE nimi = :name AND salasana = :password LIMIT 1');
         $query->execute(array('name' => $name, 'password' => $password));
         $row = $query->fetch();

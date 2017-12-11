@@ -12,7 +12,7 @@
         </title>
 
         {% block head %}
-        <link href="{{base_path}}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="{{base_path}}/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
         <link href="{{base_path}}/assets/css/site.css" rel="stylesheet">
         {% endblock %}
@@ -42,7 +42,7 @@
                         <li><a href="http://oolli.users.cs.helsinki.fi/metallidrinkit/drinkit">Drinkit</a></li>
 
                         {% if user_logged_in %} <!-- Näkyy vain jos on kirjautunut-->
-                        <li><a href="http://oolli.users.cs.helsinki.fi/metallidrinkit/drinkit/uusi">Lisää drinkki</a></li>
+                            <li><a href="http://oolli.users.cs.helsinki.fi/metallidrinkit/drinkit/uusi">Lisää drinkki</a></li>
                         <li><a>Kirjautunut käyttäjä: {{user_logged_in.nimi}}</a></li>
 
                         <form class="navbar-form navbar-right" method="post" action="{{base_path}}/logout">

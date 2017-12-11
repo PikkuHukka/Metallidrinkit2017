@@ -2,7 +2,7 @@
 
 class UserController extends BaseController {
 
-    public static function login() {
+    public function login() {
         View::make('login.html');
     }
 
