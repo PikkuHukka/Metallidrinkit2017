@@ -27,6 +27,7 @@
     </div>
 
     <div class="checkbox">
+        
         {% for ainesosa  in ainesosat %}
         <label class="checkbox-inline"><input name="ainesosat[]" type="checkbox" value="{{ainesosa.id}}">{{ainesosa.nimi}}</label>
         {% endfor %}
