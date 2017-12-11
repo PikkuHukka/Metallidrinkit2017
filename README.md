@@ -5,7 +5,7 @@ Yleisiä linkkejä:
 
 * [Linkki etusivulle](http://oolli.users.cs.helsinki.fi/metallidrinkit/)
 
-* [Linkki dokumentaatiooni](https://github.com/PikkuHukka/Metallidrinkit/tree/master/doc/dokumentaatio.pdf) 
+* [Linkki dokumentaatiooni](https://github.com/PikkuHukka/Metallidrinkit2017/tree/master/doc/dokumentaatio.pdf) 
 
 Vaikka osa dokumentaation sisältävistä asioista ei löydy vielä ohjelmistosta, en muokkaa sitä koska suunnittelen lisääväni ne kurssin loppumisen jälkeen.
 
